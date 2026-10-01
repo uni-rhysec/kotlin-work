@@ -1,3 +1,3 @@
 fun main() {
-    println("hi world >c<")
+    println("The")
 }
