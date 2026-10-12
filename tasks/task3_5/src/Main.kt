@@ -7,4 +7,10 @@ import kotlin.io.path.writeText
 
 fun main() {
     // Add your code here
+    val filePath = Path("test.txt")
+    filePath.writeText("Blackcap\n")
+    filePath.appendText("Sunny Jr.")
+
+    val fileRead = filePath.readText()
+    println(fileRead)
 }
