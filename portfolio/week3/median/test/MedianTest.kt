@@ -17,4 +17,20 @@ class MedianTest : FreeSpec({
     }
 
     // Write four more tests here
+
+    "Median of 10 for list (10)" {
+        median(listOf(10f)) shouldBe 10f
+    }
+
+    "Median of 15 for list (10,20)" {
+        median(listOf(10f,20f)) shouldBe 15f
+    }
+
+    "Median of 25 for list (50,10,25)" {
+        median(listOf(50f,10f,25f)) shouldBe 25f
+    }
+
+    "Median of 20 for list (50,25,10,15)" {
+        median(listOf(50f,25f,10f,15f)) shouldBe 20f
+    }
 })
