@@ -2,3 +2,23 @@
 // Triangle class
 
 import kotlin.math.sqrt
+
+class Triangle(val sideA: Double, val sideB: Double, val sideC: Double) {
+    init {
+        if (!(sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB)) {
+            throw IllegalArgumentException("Invalid triangle")
+        }
+    }
+    
+    val perimeter: Double = sideA + sideB + sideC
+    val semiPerimeter: Double = perimeter / 2
+    val area: Double = sqrt( semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
+    
+
+    override fun toString(): String {
+        return "Triangle(${sideA}, ${sideB}, ${sideC})"
+    }
+
+}
+
+
