@@ -54,7 +54,7 @@ class ToDoList() {
         // Write code here to return a list of items with the matching
         // status, or a list of all items if status argument is null
 
-        return items.filter {it.status != status}
+        return items.filter { status == null || it.status == status }
     }
 
     fun getItemsDueOn(date: LocalDate): List<ToDoItem> {
