@@ -13,7 +13,7 @@ import io.kotest.matchers.throwable.shouldHaveMessage
 @Suppress("Unused")
 class StudentAccountTest : FreeSpec({
     val account = StudentAccount("Sarah")
-
+    val MAX_OVERDRAFT = 100
     "StudentAccount is a subclass of BankAccount" {
         account::class.shouldBeSubtypeOf<BankAccount>()
     }
@@ -45,13 +45,13 @@ class StudentAccountTest : FreeSpec({
             account.overdraft = -1
         }
     }
-/*
+
     "Overdraft cannot exceed upper limit" {
         shouldThrow<IllegalArgumentException> {
             account.overdraft = MAX_OVERDRAFT + 1
         }
     }
-*/
+
     "Can deposit money in a StudentAccount" {
         account.deposit(100)
         account.balance shouldBe 100

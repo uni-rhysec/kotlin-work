@@ -4,7 +4,7 @@ package comp2850.banking
 class StudentAccount(holder: String) : BankAccount(holder) {
     var overdraft: Int = 0
     set(value) {
-        if (overdraft !in 0..100) {
+        if (value !in 0..100) {
             throw IllegalArgumentException()
         } else {
             field = value
@@ -24,7 +24,10 @@ class StudentAccount(holder: String) : BankAccount(holder) {
     }
     
     fun withdrawalsAllowed(): Boolean {
-        return false
+        if (balance <= 0 - overdraft) {
+            return false
+        }
+        return true
     }
     
     override fun toString(): String {
